@@ -8,7 +8,7 @@ Run script to install a secure Maria DB installation locally, ready for clusteri
 
 ## How to Run:
 
-## Make Executable
+### Make Executable
 
 <code>chmod +x maria-install.sh</code>
 
