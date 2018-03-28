@@ -1,5 +1,5 @@
 # Scripts	
-Below are a assortment of scripts to help with the installation of a Guacamole instance with a Maria DB backend.
+Below are an assortment of scripts to help with the installation of a Guacamole instance with a Maria DB backend.
 
 # maria-install
 Script for installing Maria DB 10.1 on Ubuntu 16.04 or newer, based off of the tutorial at:  https://www.howtoforge.com/tutorial/how-to-install-and-configure-galera-cluster-on-ubuntu-1604/
@@ -8,7 +8,7 @@ Run script to install a secure Maria DB installation locally, ready for clusteri
 
 ## How to Run:
 
-##Make Executable
+## Make Executable
 
 <code>chmod +x maria-install.sh</code>
 
