@@ -19,12 +19,12 @@ Run script to install a secure Maria DB installation locally, ready for clusteri
 In this process, you will be asked to set root password, remove anonymous users, disallow root login remotely and remove test database. Answer all the questions as shown below for default behaviour:
 
 <code>
-Enter current password for root (enter for none):  
-Change the root password? [Y/n] n  
-Remove anonymous users? [Y/n] Y  
-Disallow root login remotely? [Y/n] Y  
-Remove test database and access to it? [Y/n] Y  
-Reload privilege tables now? [Y/n] Y  
+Enter current password for root (enter for none): <br/>
+Change the root password? [Y/n] n <br/>
+Remove anonymous users? [Y/n] Y <br/>
+Disallow root login remotely? [Y/n] Y <br/>
+Remove test database and access to it? [Y/n] Y <br/>
+Reload privilege tables now? [Y/n] Y <br/>
 </code>
 
 # guac-install
