@@ -19,12 +19,12 @@ Run script to install a secure Maria DB installation locally, ready for clusteri
 In this process, you will be asked to set root password, remove anonymous users, disallow root login remotely and remove test database. Answer all the questions as shown below for default behaviour:
 
 
-<i>Enter current password for root (enter for none):  </i>
-<i>Change the root password? [Y/n] n  </i>
-<i>Remove anonymous users? [Y/n] Y  </i>
-<i>Disallow root login remotely? [Y/n] Y  </i>
-<i>Remove test database and access to it? [Y/n] Y  </i>
-<i>Reload privilege tables now? [Y/n] Y  </i>
+<i>Enter current password for root (enter for none):  </i></br>
+<i>Change the root password? [Y/n] n  </i></br>
+<i>Remove anonymous users? [Y/n] Y  </i></br>
+<i>Disallow root login remotely? [Y/n] Y  </i></br>
+<i>Remove test database and access to it? [Y/n] Y  </i></br>
+<i>Reload privilege tables now? [Y/n] Y  </i></br>
 
 # guac-install
 Script for installing Guacamole 0.9.14 on Ubuntu 16.04 or newer with MySQL. It should also work on pure Debian >= 7 but I have not tested.
