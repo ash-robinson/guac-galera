@@ -1,0 +1,13 @@
+## guacamole.properties
+
+# haproxy mariadb connection
+	mysql-hostname: <haproxy ip>
+	mysql-port: 3306
+	mysql-database: guacamole_db
+	mysql-username: <username> 
+	mysql-password:  <password>
+	
+# duo authentication
+	duo-api-hostname: <duo hostname>
+	duo-integration-key:  <duo integration key>
+	duo-secret-key: <duo secret key>

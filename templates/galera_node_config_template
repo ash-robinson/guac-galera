@@ -1,0 +1,20 @@
+## found at /etc/mysql/conf.d/galera
+[mysql]
+binlog_format=ROW
+default-storage-engine=innodb
+innodb_autoinc_lock_mode=2
+
+# galera provide config
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+
+# galera cluster config
+wsrep_cluster_name="galera_cluster"
+wsrep_clustter_address="gcomm://<ip1>,<ip2>,<ip3>"
+
+# galera sync config
+wsrep_sst_method=rsync
+
+# galera node config
+wsrep_node_address="<ip>"
+swrep_node_name="<node name>"

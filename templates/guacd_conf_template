@@ -1,0 +1,5 @@
+## guacd.conf (etc/guacamole/guacd.conf)
+
+[server]
+bind_host = localhost
+bind_port = 4822

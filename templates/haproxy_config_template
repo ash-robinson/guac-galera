@@ -1,0 +1,43 @@
+### 
+#	default haproxy config....
+###
+
+## galera cluster
+listen galera
+	bind <ip>:<port>
+	balance roundrobin
+	mode tcp
+	option forwardfor
+	option mysql-check user <user>
+	
+	# repeat as needed - default config uses 3
+	server <node name> <ip>:<port> check weight 1
+	server <node name> <ip>:<port> check weight 1
+	server <node name> <ip>:<port> check weight 1
+	
+	
+## haproxy stats - should only be accessible from internal
+	bind <ip>:<port>
+	stats enable
+	stats hide-version
+	stats show-node
+	stats uri /stats
+	stats auth <user>:<password>
+	
+## guacamole config
+frontend guacamole-service
+	bind <ip>:<port>
+	default_backend guacamole-server
+	mode http
+	
+backend guacamole-server
+	balance roundrobin
+	option redispatch
+	option forwardfor 
+	option httpchk
+	cookie JSESSIONID prefix
+	
+	# repeat as needed, default config uses 2default
+	# note: default binding for guacamole is <ip>:8080/guacamole
+	server <node name> <ip>:<port>/guacamole check cookie <node name>
+	server <node name> <ip>:<port>/guacamole check cookie <node name>
