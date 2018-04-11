@@ -1,5 +1,5 @@
 ## found at /etc/mysql/conf.d/galera
-[mysql]
+[mysqld]
 binlog_format=ROW
 default-storage-engine=innodb
 innodb_autoinc_lock_mode=2
