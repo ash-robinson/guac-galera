@@ -11,3 +11,5 @@
 	duo-api-hostname: <duo hostname>
 	duo-integration-key:  <duo integration key>
 	duo-secret-key: <duo secret key>
+	duo-application-key: <access key gen [40 char]>
+	

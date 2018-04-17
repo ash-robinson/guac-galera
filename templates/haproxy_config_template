@@ -17,6 +17,7 @@ listen galera
 	
 	
 ## haproxy stats - should only be accessible from internal
+listen stats
 	bind <ip>:<port>
 	stats enable
 	stats hide-version
@@ -41,3 +42,4 @@ backend guacamole-server
 	# note: default binding for guacamole is <ip>:8080/guacamole
 	server <node name> <ip>:<port>/guacamole check cookie <node name>
 	server <node name> <ip>:<port>/guacamole check cookie <node name>
+	
