@@ -2,6 +2,9 @@
 #	default haproxy config....
 ###
 
+#########################################
+## 	Galera config
+#########################################
 ## galera cluster
 listen galera
 	bind <ip>:<port>
@@ -15,7 +18,9 @@ listen galera
 	server <node name> <ip>:<port> check weight 1
 	server <node name> <ip>:<port> check weight 1
 	
-	
+#########################################
+##	HAProxy config
+#########################################	
 ## haproxy stats - should only be accessible from internal
 listen stats
 	bind <ip>:<port>
@@ -25,6 +30,32 @@ listen stats
 	stats uri /stats
 	stats auth <user>:<password>
 	
+#########################################
+## 	HTTPS config 
+#########################################
+#	## http redirect - for https only
+#	frontend http-frontend
+#		bind <ip>:80
+#		redirect scheme https code 301 if !{ ssl_fc }
+#		
+#	## guacamole config
+#	frontend guacamole-service
+#		bind <ip>:<port> ssl crt /etc/ssl/certs/<cert name>
+#		default_backend guacamole-server
+#		mode http	
+#########################################
+## 	HTTP config - default
+#########################################
+## guacamole config
+frontend guacamole-service
+	bind <ip>:<port>
+	default_backend guacamole-server
+	mode http	
+#########################################
+
+#########################################
+##	Guacamole config
+#########################################
 ## guacamole config
 frontend guacamole-service
 	bind <ip>:<port>
@@ -38,8 +69,9 @@ backend guacamole-server
 	option httpchk
 	cookie JSESSIONID prefix
 	
-	# repeat as needed, default config uses 2default
+	# repeat as needed, default config uses 2 by default
 	# note: default binding for guacamole is <ip>:8080/guacamole
 	server <node name> <ip>:<port>/guacamole check cookie <node name>
 	server <node name> <ip>:<port>/guacamole check cookie <node name>
+	
 	
