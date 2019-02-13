@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Version number of Guacamole to install
-GUACVERSION="0.9.14"
+# GUACVERSION="0.9.14"
+GUACVERSION="1.0.0"
 
 # Update apt so we can search apt-cache for newest tomcat version supported
 apt-get update
@@ -194,10 +195,10 @@ GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO 'guacamole_user'@'localho
 flush privileges;"
 
 # Execute SQL code
-echo $SQLCODE | mysql -u root -p$mysqlrootpassword
+echo $SQLCODE | mysql -u root -p $mysqlrootpassword
 
 # Add Guacamole schema to newly created database
-cat guacamole-auth-jdbc-${GUACVERSION}/mysql/schema/*.sql | mysql -u root -p$mysqlrootpassword guacamole_db
+cat guacamole-auth-jdbc-${GUACVERSION}/mysql/schema/*.sql | mysql -u root -p $mysqlrootpassword guacamole_db
 
 # Ensure guacd is started
 service guacd start

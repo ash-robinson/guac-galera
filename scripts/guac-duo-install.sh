@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Version number of Guacamole to install
-GUACVERSION="0.9.14"
+# GUACVERSION="0.9.14"
+GUACVERSION="1.0.0"
 
 # Update apt so we can search apt-cache for newest tomcat version supported
 apt-get update
